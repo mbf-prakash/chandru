@@ -1,0 +1,48 @@
+{% extends 'APYDataGridBundle::blocks.html.twig' %}
+
+{% block grid_rows %}
+
+{{ parent() }}
+
+{% if(grid.rows) %}
+<tfoot class="totalsum">
+    <tr>
+        <td></td>
+        <td></td> 
+        <td></td>
+        <td></td>
+        
+        
+        <td  style="text-align:right;color:red">{{ totalsum.totalsubtotal|number_format(2, '.', ',') }}</td>
+        <td  style="text-align:right;color:red">{{ totalsum.totalcgst|number_format(2, '.', ',') }}</td>
+        <td  style="text-align:right;color:red">{{ totalsum.totalsgst|number_format(2, '.', ',') }}</td>
+        <td  style="text-align:right;color:red">{{ totalsum.totaligst|number_format(2, '.', ',') }}</td>
+        <td  style="text-align:right;color:red">{{ totalsum.totalcashdiscount|number_format(2, '.', ',') }}</td>
+        <td  style="text-align:right;color:red">{{ totalsum.totalgrandtotal|number_format(2, '.', ',') }}</td>       
+        <td></td>
+        <td></td>
+        <td></td>
+         <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td> 
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+       
+      
+        <td  style="text-align:right;color:blue">TAX</td>
+        <td  style="text-align:right;color:blue">{{ (totalsum.totalcgst +  totalsum.totalsgst + totalsum.totaligst)|number_format(2, '.', ',') }}</td>
+        
+        <td></td>
+        <td></td>
+        <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+    </tr>
+</tfoot>
+{% endif %}
+{% endblock grid_rows %}

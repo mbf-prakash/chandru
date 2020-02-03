@@ -1,0 +1,99 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+
+
+{% if pinvoiceamt > 0 %}
+
+  <div class="bg-white table-bg">
+   {{ include('site/_flash_messages.html.twig')}}
+  <h2></h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+<div class="row">
+<div class="col-sm-2">
+</div>
+<div class="col-sm-3">
+
+<div class="form-group">
+{{ form_widget(form.paiddate, {'attr': {'class': 'form-control', 'placeholder':'Paid Date'} }) }}
+    <span class="error required">{{ form_errors(form.paiddate) }}</span>
+</div>
+
+</div>
+
+<div class="col-sm-3">
+
+<div class="form-group">
+{{ form_widget(form.amount, {'attr': {'class': 'form-control', 'placeholder':'Paid Amount'} }) }}
+    <span class="error required">{{ form_errors(form.amount) }}</span>
+</div>
+
+</div>
+
+
+
+
+<div class="col-sm-4">
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Submit </button> 
+ </div>
+
+ </div>
+
+</div>
+{{ form_end(form) }}
+
+
+<div class="row justify-content-md-center">
+<div class="col-sm-6">
+
+<div class="table-responsive">
+<table class="table table-hover no-wrap">
+<thead>
+<tr class="bg-info text-white">
+<th class="text-center">Invoice #</th>
+<th class="text-center">Date</th>
+<th class="text-center">Amount</th>
+<th class="text-center">Balance</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% set counter = 1 %}
+{% for item in paidamount %}
+
+<tr>
+<td class="text-center"> {{ counter }} </td>
+<td class="text-center"> {{ item.paiddate|date('d-m-Y') }} </td>
+<td class="text-right"> {{ item.amount }}</td>
+<td class="text-right">{{ item.balance }}</td>
+</tr>
+
+
+{% set counter = counter + 1 %}
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endif %}
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+<?php return unserialize('C:21:"Metadata\\NullMetadata":86:{a:5:{i:0;s:21:"AppBundle\\Entity\\User";i:1;a:0:{}i:2;a:0:{}i:3;a:0:{}i:4;i:1548826596;}}');

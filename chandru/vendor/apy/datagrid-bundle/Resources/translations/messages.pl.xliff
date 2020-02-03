@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="13">
+                <source>eq</source>
+                <target>Równe</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>neq</source>
+                <target>Różne niż</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>lt</source>
+                <target>Mniejsze niż</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>lte</source>
+                <target>Mniejsze lub równe</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>gt</source>
+                <target>Większe niż</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>gte</source>
+                <target>Większe lub równe</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>req</source>
+                <target>Wyrażenie regularne</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>like</source>
+                <target>Stała</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>nlike</source>
+                <target>Zmienna</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>rlike</source>
+                <target>Zaczynające się</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>llike</source>
+                <target>Kończące się</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>btw</source>
+                <target>Pomiędzy bez</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>btwe</source>
+                <target>Pomiędzy z</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>isNull</source>
+                <target>Puste</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>isNotNull</source>
+                <target>Niepuste</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>%count% Results, </source>
+                <target>{0} %count% Wyników|{1} %count% Wynik|]1,Inf[ %count% Wyników, </target>
+            </trans-unit>
+
+            <trans-unit id="1">
+                <source>Page</source>
+                <target>Strona</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>, Display</source>
+                <target>, Pokazuj</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>of %count%</source>
+                <target>z %count%</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Items per page</source>
+                <target>elementów na stronie</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Select visible</source>
+                <target>Zaznacz widoczne</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Select all</source>
+                <target>Zaznacz wszystkie</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Deselect visible</source>
+                <target>Cofnij zaznaczenie widocznych</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Deselect all</source>
+                <target>Cofnij zaznaczenie wszystkich</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Action</source>
+                <target>Akcja</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Submit Action</source>
+                <target>Wykonaj Akcję</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>From:</source>
+                <target>Od:</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>To:</source>
+                <target>Do:</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

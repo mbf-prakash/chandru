@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/adminstyle.css') }}"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- font link starts here -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- font link ends here -->
+
+    <script>
+        // Helper function to get parameters from the query string.
+        function getUrlParam( paramName ) {
+            var reParam = new RegExp( '(?:[\?&]|&)' + paramName + '=([^&]+)', 'i' );
+            var match = window.location.search.match( reParam );
+
+            return ( match && match.length > 1 ) ? match[1] : null;
+        }
+        // Simulate user action of selecting a file to be returned to CKEditor.
+        function returnFileUrl(myurl) {
+
+            var funcNum = getUrlParam( 'CKEditorFuncNum' );
+            var fileUrl = myurl;
+            window.opener.CKEDITOR.tools.callFunction( funcNum, fileUrl );
+            window.close();
+        }
+    </script>
+</head>
+<body> 
+
+
+<div class="paddtopbottom-20">
+<div class="container-fluid">
+  <div class="bg-white table-bg">
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+
+
+  <div class="form-group">
+ 
+  {{ form_widget(form.imageFile, {'attr': {'class': 'form-control filestyle',} }) }}
+    <span class="error required">{{ form_errors(form.imageFile) }}</span>
+ 
+  </div>
+
+  <button type="submit" class="btn btn-primary"><i class="fa fa-upload"></i> Upload</button>
+ <div class="paddtopbottom-20">
+    {{ form_end(form) }}
+    <div class="userimages">
+{% for item in userimage %} 
+<button onclick="returnFileUrl('{{ absolute_url('/images/assets/'~item.imageName) }}')"><img src="{{ absolute_url('/images/assets/'~item.imageName) }}" class="resize" alt="Images"></button> 
+{% endfor %}
+</div>
+</div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</body>
+</html> 

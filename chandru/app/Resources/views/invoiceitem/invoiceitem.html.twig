@@ -1,0 +1,100 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+
+   {{ include('site/_flash_messages.html.twig')}}
+  <div class="bg-white table-bg">
+  <h2></h2>
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+
+<div class="form-group">
+
+<div class="row">
+<div class="col-sm-8">
+<label>Select Product<span class="required">*</span></label>
+{{ form_widget(form.product, {'attr': {'class': 'form-control', 'placeholder':'Product Name'} }) }}
+    <span class="error required">{{ form_errors(form.product) }}</span>
+</div>
+<div class="col-sm-1">
+<label>Disc(%)<span class="required">*</span></label>
+{{ form_widget(form.discount, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.discount) }}</span>
+</div> 
+
+<div class="col-sm-1">
+<label>Qty<span class="required">*</span></label>
+{{ form_widget(form.quantity, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.quantity) }}</span>
+</div> 
+
+<div class="col-sm-2">
+<div style="padding-bottom:6px">&nbsp;</div>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left">
+<i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+</div>
+</div>
+
+{{ form_end(form) }}
+
+
+{% if subtotal > 0 %}
+{{ grid(grid) }}
+
+{% block grid_filters %}{% endblock %}
+<div class="grid">
+<table class="table table-striped">
+<tbody>
+
+    <tr>
+        <td style="width:50px"></td>
+        <td style="text-align:right;color:red;">Sub Total</td> 
+        <td style="width:100px;text-align:right;color:red;">{{ subtotal|number_format(2, '.', ',') }}</td>
+        <td style="width:135px;"></td>
+    </tr>
+{% if igst == 0 %}
+    <tr>
+        <td></td>
+        <td style="text-align:right">CGST</td> 
+        <td style="text-align:right">{{ cgst|number_format(2, '.', ',') }}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="text-align:right">SGST</td> 
+        <td style="text-align:right">{{ sgst|number_format(2, '.', ',') }}</td>
+        <td></td>
+    </tr>
+   {% else %}
+   <tr>
+        <td></td>
+        <td style="text-align:right">IGST</td> 
+        <td style="text-align:right">{{ igst|number_format(2, '.', ',') }}</td>
+        <td></td>
+    </tr>
+{% endif %}
+    <tr>
+        <td></td>
+        <td style="text-align:right;color:red;">Total</td> 
+        <td style="text-align:right;color:red;">{{ total|number_format(2, '.', ',') }}</td>
+        <td></td>
+    </tr>
+
+</tbody>
+</table>
+</div>
+{% endif %}
+
+</div>
+</div>
+</div>
+
+
+ {% endblock %}

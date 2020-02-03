@@ -1,0 +1,44 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+<div class="paddtopbottom-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+<p><a href="{{ path('dashboard') }}">Dashboard</a> / <a href="{{ path('invoice') }}">Invoice</a> / Change Payment Status</p>
+</div>
+  <div class="bg-white table-bg">
+  <h2></h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+<div class="row">
+<div class="col-sm-2">
+
+<div class="form-group">
+{{ form_widget(form.paiddate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.paiddate) }}</span>
+</div>
+
+</div>
+
+
+
+
+<div class="col-sm-10">
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Change Payment Status </button> 
+ </div>
+
+ </div>
+
+</div>
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

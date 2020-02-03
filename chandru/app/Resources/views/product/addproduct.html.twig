@@ -1,0 +1,117 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+
+<div class="paddtopbottom-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+<p><a href="{{ path('dashboard') }}">Dashboard</a> / <a href="{{ path('product') }}">Product</a> / Add Product</p>
+</div>
+  <div class="bg-white table-bg">
+  <h2>Create Product</h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+
+<div class="form-group">
+<label>Category<span class="required">*</span></label>
+{{ form_widget(form.category, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.category) }}</span>
+</div>
+
+
+<div class="form-group">
+<label>Product Name<span class="required">*</span></label>
+{{ form_widget(form.product, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.product) }}</span>
+</div>
+
+<div class="form-group">
+<label>Unit<span class="required">*</span></label>
+{{ form_widget(form.unit, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.unit) }}</span>
+</div>
+
+<div class="form-group">
+<label>HSSN Code<span class="required">*</span></label>
+{{ form_widget(form.hssncode, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.hssncode) }}</span>
+</div>
+<div class="form-group">
+<label>GST Percentage<span class="required">*</span></label>
+{{ form_widget(form.gst, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.gst) }}</span>
+</div>
+<div class="form-group">
+<label>MRP<span class="required">*</span></label>
+{{ form_widget(form.mrp, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.mrp) }}</span>
+</div>
+
+<div class="form-group">
+<label>Discount Percentage<span class="required">*</span></label>
+{{ form_widget(form.discount, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.discount) }}</span>
+</div>
+
+<div class="form-group">
+<label>Selling Rate<span class="required">*</span></label>
+{{ form_widget(form.rate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.rate) }}</span>
+</div>
+
+
+
+
+
+<div class="form-group">
+<label>Stock<span class="required">*</span></label>
+{{ form_widget(form.stock, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.stock) }}</span>
+</div>
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+</div>
+
+
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+
+ {% endblock %}
+ {% block javascripts %}
+
+ {{ parent() }}
+ <script>
+$(document).ready(function(){
+    $("#product_mrp").change(function(){
+        var num=$("#product_mrp").val()-($("#product_mrp").val()*($("#product_discount").val()/100));
+        var gst=1+($("#product_gst").val()/100);
+        num=num/gst;
+        $("#product_rate").val(num.toFixed(2));
+       
+    });
+      $("#product_discount").change(function(){
+        var num=$("#product_mrp").val()-($("#product_mrp").val()*($("#product_discount").val()/100));
+        var gst=1+($("#product_gst").val()/100);
+        num=num/gst;
+        $("#product_rate").val(num.toFixed(2));
+       
+    });
+       $("#product_gst").change(function(){
+        var num=$("#product_mrp").val()-($("#product_mrp").val()*($("#product_discount").val()/100));
+        var gst=1+($("#product_gst").val()/100);
+        num=num/gst;
+        $("#product_rate").val(num.toFixed(2));
+       
+    });
+});
+</script>
+
+  {% endblock %}

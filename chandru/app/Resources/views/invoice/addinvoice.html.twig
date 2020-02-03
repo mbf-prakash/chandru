@@ -1,0 +1,50 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2></h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+<div class="row">
+<div class="col-sm-2">
+
+<div class="form-group">
+{{ form_widget(form.invoicedate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.invoicedate) }}</span>
+</div>
+
+</div>
+
+
+<div class="col-sm-7">
+
+<div class="form-group">
+{{ form_widget(form.customer, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.customer) }}</span>
+</div>
+
+</div>
+
+<div class="col-sm-3">
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Create Invoice </button> 
+ </div>
+
+ </div>
+
+</div>
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

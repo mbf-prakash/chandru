@@ -1,0 +1,95 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+	<div class="padding-20">
+    
+    
+    
+    
+    <section id="sales" class="margintop-20">
+<div class="container-fluid">
+
+
+<div class="bg-white padding-10 border">
+<h5 class="page-title text-center">{{ year }} Sales</h5>
+
+
+<center>
+
+
+{{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+<div class="form-inline">
+
+<div class="form-group">
+{{ form_widget(form.year, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.year) }}</span>
+</div>
+
+<button type="submit" class="btn btn-primary">Search</button>
+
+</div>
+
+
+
+{{ form_end(form) }}
+
+</center>
+<br>
+
+<div class="table-responsive">
+<table class="table table-hover no-wrap">
+<thead>
+<tr class="bg-info text-white">
+<th class="text-center">Invoice #</th>
+<th class="text-center">Date</th>
+<th class="text-center">Customer</th>
+<th class="text-center">Status</th>
+<th class="text-center">Total</th>
+</tr>
+</thead>
+<tbody>
+
+
+{% set totalsalesamount = 0 %}
+{% set counter = 1 %}
+{% for item in sales %}
+{% set totalsalesamount = totalsalesamount + item.grandtotal %}
+
+<tr>
+<td class="text-center"> {{ item.invoicenumber }}</td>
+<td class="text-center"> {{ item.invoicedate|date('d-m-Y') }} </td>
+<td> {{ item.company }}</td>
+<td class="text-right"><span>{% if item.status == true %} Paid {% else %} UnPaid {% endif %}</span> </td>
+<td class="text-right"><span>{{ item.grandtotal|number_format(2, '.', ',') }}</span></td>
+</tr>
+
+
+{% set counter = counter + 1 %}
+{% endfor %}
+
+<tr>
+<th class="text-right" colspan="4">Total Amount</th>
+<th class="text-right">{{ totalsalesamount|number_format(2, '.', ',') }}</th>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+<section>
+
+</div>
+
+
+
+
+{% endblock %}
+

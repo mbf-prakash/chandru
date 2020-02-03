@@ -1,0 +1,43 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+  <div class="bg-white table-bg">
+  {{ include('site/_flash_messages.html.twig')}}
+  <h2>Change Password</h2>
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+  <div class="form-group">
+  <label>Current Password<span class="error">*</span></label>
+  {{ form_widget(form.oldPassword, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.oldPassword) }}</span>
+ 
+  </div>
+
+   <div class="form-group">
+  <label>New Password<span class="error">*</span></label>
+  {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.plainPassword.first) }}</span>
+ 
+  </div>
+
+   <div class="form-group">
+  <label>Confirm New Password<span class="error">*</span></label>
+  {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.plainPassword.second) }}</span>
+ 
+  </div>
+
+
+  <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Change Password</button>
+ 
+    {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+
+ {% endblock %}

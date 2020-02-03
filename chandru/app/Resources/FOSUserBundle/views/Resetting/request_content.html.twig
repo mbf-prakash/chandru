@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %} 
+
+<img src="{{ asset('images/logo.png') }}" alt="admin" class="img-fluid img-center">
+  <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="margintopbott-40">
+        <p>Please enter your email address. You will receive a link to create a new password via email.</p>
+          <div class="form-group">
+          <input type="email" id="username" name="username" class="form-control" placeholder="Email Address">
+    <span class="error">{% if invalid_username is defined %}
+            The email address does not exist. Please try again
+        {% endif %}</span>
+           
+          </div>
+          <input type="submit" value="RESET PASSWORD" class="btn btn-info login">
+        </form>
+        <div class="text-right">
+        <p><a href="{{ path('home') }}" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a></p>
+        </div>
+
+
+ 
+

@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %} 
+<img src="{{ asset('images/logo.png') }}" alt="admin" class="img-fluid img-center">
+
+               
+                
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': {'class': 'margintopbott-40', 'role':'form', 'novalidate': 'novalidate'}}) }}
+    
+   
+                    <div class="form-group">
+                        {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control form-size', 'placeholder': 'New Password'} }) }}<span class="error">{{ form_errors(form.plainPassword.first) }}</span>
+                    </div>
+                    <div class="form-group">
+                     {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control form-size', 'placeholder': 'Confirm New Password'} }) }}<span class="error">{{ form_errors(form.plainPassword.second) }}</span>
+                      </div>
+                    
+                    <p class="paddingtopbott-30">
+                     <input type="submit" id="_submit" name="_submit" value="RESET PASSWORD" class="btn btn-info login" />
+                     </p>
+                   
+               {{ form_end(form) }}
+
+
+ 
+
+

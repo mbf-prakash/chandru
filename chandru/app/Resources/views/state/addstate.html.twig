@@ -1,0 +1,40 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2>Create State</h2>
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+ 
+<div class="form-group">
+<label>State<span class="required">*</span></label>
+{{ form_widget(form.state, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.state) }}</span>
+</div>
+
+
+<div class="form-group">
+<label>StateCode<span class="required">*</span></label>
+{{ form_widget(form.statecode, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.statecode) }}</span>
+</div>
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+<a href="{{ path('state') }}" class="btn btn-secondary"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a>
+</div>
+
+  {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+
+ {% endblock %}

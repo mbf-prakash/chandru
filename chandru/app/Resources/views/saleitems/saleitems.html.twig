@@ -1,0 +1,81 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+
+
+
+<div class="table-responsive">
+<table class="table table-hover no-wrap">
+<thead>
+<tr class="bg-info text-white">
+<th class="text-center">Invoice #</th>
+<th class="text-center">Date</th>
+<th class="text-center">Customer Name</th>
+<th class="text-center">Product Name</th>
+<th class="text-center">Quantity</th>
+<th class="text-center">Amount</th>
+</tr>
+</thead>
+<tbody>
+
+
+
+{% set totalinamount = 0 %}
+{% set counter = 1 %}
+{% for item in invoiceitem %}
+{% set totalinamount = totalinamount + item.amount %}
+
+<tr>
+<td class="text-center"> {{ item.id }}</td>
+<td class="text-center"> {{ item.invoice.invoicedate|date('d-m-Y') }} </td>
+<td class="text-center"> {{ item.invoice.customer.company }}</td>
+<td class="text-center"> {{ item.product }}</td>
+<td class="text-center"> {{ item.quantity }}</td>
+<td class="text-right"><span>{{ item.amount|number_format(2, '.', ',') }}</span></td>
+</tr>
+
+
+{% set counter = counter + 1 %}
+{% endfor %}
+
+<tr>
+<th class="text-right" colspan="5">Total Amount</th>
+<th class="text-right">{{ totalinamount|number_format(2, '.', ',') }}</th>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+
+
+<div class="row ">
+<div class="col-sm-12 text-center">
+
+               {# display navigation #}
+               <div class="navigation">
+               <ul class="p12">
+               <li>
+               {{ knp_pagination_render(invoiceitem) }}
+               </li>
+               </ul>
+
+               </div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+ {% endblock %}

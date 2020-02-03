@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invoice</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+</head>
+<style type="text/css">
+body
+{
+font-family: 'Roboto Slab', serif;
+font-size: 12px;
+letter-spacing: 1px;
+/*overflow-y: hidden !important;
+*/overflow-x: hidden !important;
+}
+h1
+{
+
+margin: 15px 0px 0px 0px;
+padding: 21px 0px 20px 0px;
+font-size: 20px;
+}
+
+.center {
+    text-align: center !important;
+}
+.text{
+  text-decoration: underline !important;
+}
+.right {
+    text-align: right !important;
+}
+#invoice th, #invoice td{
+  border: 0px solid #dddddd !important;
+}
+.line{
+  border-bottom: 2px solid #000;
+  width: 100px;
+  margin-top: 25px;
+}
+.form1 td, .form1 th {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: left;
+    padding: 1px;
+    height: 5px !important;
+}
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+#invoice th, #invoice td{
+  border: none !important;
+}
+
+.amountbottop{
+  border-bottom: none !important;
+    border-right: none !important;
+}
+.amountleft{
+  border-left: none !important;
+}
+.amounttop{
+    border-top: none !important;
+}
+.amountboth{
+  border-bottom: none !important;
+  border-top: none !important;
+}
+.amountright{
+      border-right: none !important;
+}
+
+
+
+
+{# h2
+{
+    text-align: center;
+    font-size: 28px;
+}
+.width
+{
+width: 780px;
+border:1px solid #ccc;
+}
+.logo a
+{
+padding-left:29%;
+}
+.heading
+{
+background-color: #f2f2f2;
+text-align: left;
+}
+table tr td 
+{
+padding: 8px;
+line-height: 1.42857143;
+vertical-align: top;
+border:1px solid #ddd;
+}
+.address tr td
+{
+border:none;
+}
+table
+{
+width: 100%;
+border-collapse: collapse;
+}
+table th
+{
+text-align: left;
+border:1px solid #ddd;
+padding-left: 9px;
+}
+.billto th
+{
+border:none;
+}
+.header
+{
+width: 800px;
+margin: 0px auto;
+}
+.customeraddress
+{
+padding-left: 27px;
+width: 50%;
+}
+.datecontent
+{
+text-align: right;
+}
+
+
+td .br-left{
+  border-left: : none !important;
+}
+td .br-right{
+   border-right: : none !important;
+ }
+
+.invoiceheading
+{
+font-weight: bold;
+text-align: center; 
+font-size: 24px;
+}
+.total
+{
+width: 446px;
+}
+.amount
+{
+width: 100%;
+}
+.amount td
+{
+line-height: 26px;
+text-align: right;
+}
+.footerdivision
+{
+width: 530px;
+}
+.description th
+{
+background: #484242;
+color: #fff;
+padding: 10px 0px 10px 10px;
+}
+.descriptiontitle
+{
+text-align: center;
+}
+.alignment
+{
+text-align: right;
+}
+.alignright
+{
+text-align: right;
+}
+.alignleft
+{
+text-align: left;
+}
+.minheight
+{
+    min-height: 590px !important;
+}
+.customeraddress h3
+{
+margin-bottom: -23px;   
+}
+.form1 .bl-none{
+   border-bottom: 0px solid black;
+        border-top: 0px solid black;
+}
+
+
+
+
+
+
+
+
+
+.footeraddress p
+{
+font-size: 14px !important;
+} #}
+</style>
+<body>
+<div style="margin-bottom:100px;">
+<h1 style="text-align:center">Tax Invoice</h1>
+
+
+
+
+
+<table class="form1">
+<tr>
+
+  <td rowspan="2" colspan="4" class="br-none">
+   <div style="padding-left:5px">
+    <b>CHANDRU STATIONERY SUPPLIER</b><br>
+      GROUND FLOOR 1, 4.,PILLAYAR KOIL FIRST STREET,<br>
+   
+   LAKSHMIPURAM, CHROMPET,<br>
+   CHENNAI - 600044,CELL: 7708521432.<br>
+   GSTIN/UIN: 33BCSPN4963N1ZR<br> 
+   State Name: Tamil Nadu, Code: 33.<br>
+   <br><br>
+    </div>
+  </td>
+
+<td class="bl-none">
+<div style="padding-left:5px">
+Invoice No. <br>
+<b> {{ invoice.invoicenumber }}</b></div>
+</td>
+<td class="bl-none">
+<div style="padding-left:5px">Dated<br>
+<b>{{ invoice.invoicedate|date("d-M-Y") }}</b>
+</div>
+</td>
+
+</tr>
+<tr>
+  <td>
+    <div style="padding-left:5px">Suppiler's Ref.</div><br>
+    <br>
+  </td>
+   <td>
+    <div style="padding-left:5px">Credit Date<br>
+    <b>{{ invoice.invoicedate|date_modify("+15 day")|date("d-M-Y") }}</b>
+    <br>
+    </div>
+  </td>
+ </tr>
+
+<tr>
+  <td rowspan="2" colspan="4" class="br-none">
+  <div style="padding-left:5px"> Buyer<br><b>{{ customer.company }}</b><br>
+{{ customer.address1 }},<br/>
+{{ customer.address2 }},<br/> 
+{{ customer.city }} - {{ customer.pincode }} CELL {{ customer.mobile }}<br> 
+GSTIN/UIN: {{ customer.gstin }}<br> 
+State Name: {{ customer.state.state }}, Code: {{ customer.state.statecode }}<br>  </div>
+</td>
+
+  <td class="bl-none">
+    <div style="padding-left:5px">Buyer's Order No.</div><br><br>
+</td>
+<td class="bl-none">
+<div style="padding-left:5px">Dated</div><br><br>
+</td>
+</tr>
+<tr>
+  <td rowspan="2" class="amountright">
+   <br>
+    <br>
+  </td>
+   <td rowspan="2" class="amountleft">
+    <br>
+    <br>
+  </td>
+ </tr>
+
+
+</table>
+
+
+
+
+<table class="form1 .minheight">
+
+<tr>
+<td>
+ <div style="padding-left:5px"> Sl.No</div>
+</td>
+<td>
+ <div style="padding-left:5px"> Description of Goods</div>
+</td>
+
+<td>
+  <div style="padding-left:5px">HSN/SAC</div>
+</td>
+
+<td>
+ <div style="padding-left:5px">GST Rate</div>
+</td>
+
+<td>
+  <div style="padding-left:5px">MRP/Marginal</div>
+</td>
+
+<td>
+  <div style="padding-left:5px">Quantity</div>
+</td>
+
+<td>
+  <div style="padding-left:5px">Rate</div>
+</td>
+
+<td>
+ <div style="padding-left:5px"> per</div>
+</td>
+
+<td>
+  <div style="padding-left:5px">Disc%</div>
+</td>
+
+<td>
+ <div style="padding-left:5px">Amount</div>
+</td>
+
+
+{% set totalquantity = 0 %}
+{% set counter = 1 %}
+{% for item in item %}
+{% set totalquantity = totalquantity + item.quantity %}
+
+<tr>
+  
+
+  <td class="amountboth">
+    <div style="padding-left:5px">{{ counter }}</div>
+  </td>
+
+  <td class="amountboth">
+   <div style="padding-left:5px"> <b>{{ item.product }}</b></div>
+  </td>
+
+    <td class="amountboth">
+    <div style="padding-left:5px">{{ item.hssncode }}</div>
+  </td>
+
+  <td class="amountboth">
+   <div style="padding-left:5px">{{ item.gst }}</div>
+  </td>
+
+    <td class="amountboth">
+    <div style="padding-left:5px">{{ item.mrp }} / {{ item.unit.unit }}</div>
+  </td>
+
+    <td class="amountboth">
+   <div style="padding-left:5px"><b>{{ item.quantity }} {{ item.unit.unit }}</b></div>
+  </td>
+
+    <td class="amountboth">
+    <div style="padding-right:5px;text-align:right">{{ item.rate }}</div>
+  </td>
+
+    <td class="amountboth">
+    <div style="padding-left:5px">{{ item.unit.unit }}</div>
+  </td>
+
+    <td class="amountboth">
+    <div style="padding-left:5px">{{ item.discount }}</div>
+  </td>
+
+    <td class="amountboth left">
+   <div style="padding-right:5px;text-align:right"><b>{{ item.amount|number_format(2, '.', ',') }}</b></div>
+  </td>
+
+   </tr>
+{% set counter = counter + 1 %}
+{% endfor %}
+
+
+
+
+
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left">
+    <div style="padding-right:5px;text-align:right">{{ invoice.subtotal|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+{% if invoice.igst == 0 %}
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">CGST</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left amountboth">
+  <div style="padding-right:5px;text-align:right">{{ invoice.cgst|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">SGST</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left amountboth">
+  <div style="padding-right:5px;text-align:right">{{ invoice.sgst|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+
+{% if invoice.cashdiscount > 0 %}
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">Sub Total</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left">
+  <div style="padding-right:5px;text-align:right">{{ invoice.cashdiscount + invoice.grandtotal|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">Cash Discount</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left amountboth">
+  <div style="padding-right:5px;text-align:right">{{ invoice.cashdiscount|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+{% endif %}
+{% else %}
+
+
+
+
+
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">IGST</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left amountboth">
+  <div style="padding-right:5px;text-align:right">{{ invoice.igst|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+{% if invoice.cashdiscount > 0 %}
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">Sub Total</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left">
+  <div style="padding-right:5px;text-align:right">{{ invoice.cashdiscount + invoice.grandtotal|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+<tr>
+  <td class="amountboth">
+  </td>
+  <td class="right amountboth"><div style="padding-right:5px">Cash Discount</div>
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td class="amountboth">
+  </td>
+  <td  class="left amountboth">
+  <div style="padding-right:5px;text-align:right">{{ invoice.cashdiscount|number_format(2, '.', ',') }}</div>
+  </td>
+</tr>
+
+{% endif %}
+{% endif %}
+
+
+
+
+
+<tr>
+  <td>
+  </td>
+ <td class="right"><div style="padding-right:5px">Total (Round Off)</div>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td class="left"><div style="padding-left:5px"><b>{{ totalquantity }}PCS</b></div>
+    </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td>
+  </td>
+  <td class="left"><div style="padding-left:5px"><div style="padding-right:5px;text-align:right"><b>{{ invoice.grandtotal|number_format(2, '.', ',') }}</b></div></div>
+  </td>
+</tr>
+
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="form1">
+<tr>
+<td rowspan="2" colspan="4" class="br-none amountbottop">
+<div style="padding-left:5px">Amount Chargeable (in words)<br><br>
+<b>{{ inwords }} Only</b><br></div>
+</td>
+<td class="bl-none right amountleft"><div style="padding-right:5px">E & O.E<br>
+<br><br><br><br></div></td>
+
+
+</tr>
+<tr>
+ 
+ 
+ </tr>
+
+<tr>
+  <td rowspan="2" colspan="4" class="br-none amounttop" >
+  <div style="padding-left:5px">
+    <p class="text">Declaration </p><br>
+    We declare that this invoice shows the<br>
+    actual price of the goods described and that all particulars are true and correct.<br><br></div>
+  </td>
+
+  <td rowspan="2" class="bl-none right">
+    <div style="padding-right:5px">for Chandru Stationary<br><br><br><br>
+     Authorised Signatory</div>
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+<div style="margin-bottom:100px;">
+<h1 style="text-align:center">This is a Computer Generated Invoice</h1>
+
+
+</div>
+</body>
+</html>

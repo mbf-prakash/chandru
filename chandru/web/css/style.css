@@ -1,0 +1,102 @@
+body
+{
+	font-size: 14px;
+	font-family: 'Poppins', sans-serif;
+	color: #686868;
+    font-weight: 300;
+    background: url(bg-img.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+ul
+{
+	padding-left: 0;
+}
+a:hover
+{
+	text-decoration: none;
+}
+.error
+{
+	color: red;
+}
+.margintopbott-40
+{
+	margin-top: 30px;
+	margin-bottom:30px;
+}
+.paddingtop-40
+{
+	padding-top: 8px;
+}
+
+.paddingtopbott-30
+{
+	padding-top: 27px;
+	padding-bottom:13px;
+}
+.fontsize-20
+{
+	font-size: 20px;
+}
+.paddtop-20
+{
+	padding-top: 20px;
+}
+.login-form
+{
+	margin-top: 7%;
+}
+.img-center
+{
+	display: block;
+	margin: 0 auto;
+}
+.form-check-label
+{
+	    margin-right: 190px;
+}
+.login
+{
+	border-radius: 0;
+	width: 100%;
+    font-size: 18px;
+    background-color: #03a9f3;
+    border-color: #03a9f3;
+    cursor: pointer;
+}
+.login:hover, .login:focus
+{
+	background: #03a9f3;
+    opacity: .8;
+    border: 1px solid #03a9f3;
+}
+.login-register .form-group {
+    margin-bottom: 1.5rem;
+}
+.login-register ul li
+{
+	display: inline-block;
+}
+.face-color {
+    background-color: #3b5998!important;
+}
+.google-color {
+    background-color: #dd4b39!important;
+}
+.fa-icon
+{
+	color: #fff;
+    padding: 13px;
+}
+.body-color
+{
+	color: #686868;
+}
+.sign
+{
+	color: #ab8ce4;
+	font-weight: bold;
+}

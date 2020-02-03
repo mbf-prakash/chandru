@@ -1,0 +1,83 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2>Create Purchase Invoice</h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+
+<div class="form-group">
+<label>Supplier<span class="required">*</span></label>
+{{ form_widget(form.supplier, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.supplier) }}</span>
+</div>
+
+
+<div class="form-group">
+<label>Invoice Number<span class="required">*</span></label>
+{{ form_widget(form.invoicenumber, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.invoicenumber) }}</span>
+</div>
+
+<div class="form-group">
+<label>Invoice Date<span class="required">*</span></label>
+{{ form_widget(form.invoicedate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.invoicedate) }}</span>
+</div>
+
+
+<div class="form-group">
+<label>Sub Total<span class="required">*</span></label>
+{{ form_widget(form.subtotal, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.subtotal) }}</span>
+</div>
+
+
+
+<div class="form-group">
+<label>CGST<span class="required">*</span></label>
+{{ form_widget(form.cgst, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.cgst) }}</span>
+</div>
+
+<div class="form-group">
+<label>SGST<span class="required">*</span></label>
+{{ form_widget(form.sgst, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.sgst) }}</span>
+</div>
+
+<div class="form-group">
+<label>IGST<span class="required">*</span></label>
+{{ form_widget(form.igst, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.igst) }}</span>
+</div>
+
+<div class="form-group">
+<label>Total<span class="required">*</span></label>
+{{ form_widget(form.grandtotal, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.grandtotal) }}</span>
+</div>
+
+
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+</div>
+
+
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+
+ {% endblock %}

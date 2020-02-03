@@ -1,0 +1,63 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2></h2>
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+
+<div class="form-group">
+
+<div class="row">
+<div class="col-sm-7    ">
+<label>Select Product<span class="required">*</span></label>
+{{ form_widget(form.product, {'attr': {'class': 'form-control', 'placeholder':'Product Name'} }) }}
+    <span class="error required">{{ form_errors(form.product) }}</span>
+</div>
+<div class="col-sm-1">
+<label>Rate<span class="required">*</span></label>
+{{ form_widget(form.rate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.rate) }}</span>
+</div> 
+
+
+<div class="col-sm-1">
+<label>Qty<span class="required">*</span></label>
+{{ form_widget(form.quantity, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.quantity) }}</span>
+</div> 
+<div class="col-sm-1">
+<label>Amount<span class="required">*</span></label>
+{{ form_widget(form.amount, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.amount) }}</span>
+</div> 
+
+<div class="col-sm-2">
+<div style="padding-bottom:6px">&nbsp;</div>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+</div>
+</div>
+
+{{ form_end(form) }}
+
+
+
+{{ grid(grid) }}
+
+{% block grid_filters %}{% endblock %}
+
+
+
+</div>
+</div>
+</div>
+
+
+ {% endblock %}

@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: 3306
+    database_name: chandru
+    database_user: root
+    database_password: 
+    mailer_transport: smtp
+    mailer_host: signum.websitewelcome.com
+    mailer_user: no-reply@chennaihost.com
+    mailer_password: j3(6FK6+?{3@
+    secret: 806fb3d64105fb33d854dbd7a09a68376a3ababf

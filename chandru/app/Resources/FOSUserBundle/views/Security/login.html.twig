@@ -1,0 +1,39 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<img src="{{ asset('images/logo.png') }}" alt="admin" class="img-fluid img-center">
+
+               
+                <form action="{{ path('fos_user_security_check') }}" method="post" class="margintopbott-40">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% if error %}
+    <div class="error text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Username / Email Address">
+                    </div>
+                    <div class="form-group">
+                    <input type="password" id="password" name="_password" class="form-control form-size" placeholder="Password">
+                      </div>
+                      <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" id="remember_me" name="_remember_me" class="form-check-input" value="">{{ 'security.login.remember_me'|trans }}
+                      </label>
+                      <a href="{{ path('fos_user_resetting_request')}}" class="body-color" ><i class="fa fa-lock" aria-hidden="true"></i> Forgot pwd?</a>
+                      
+                    </div>
+                    <p class="paddingtopbott-30">
+                     <input type="submit" id="_submit" name="_submit" value="LOG IN" class="btn btn-info login" />
+                     </p>
+                   
+                </form>
+<!--
+<ul class="text-center">
+  <li class="list-item-inline"><a href="https://www.facebook.com/" title="Login with facebook" data-toggle="tooltip" target="_blank"><i class="fa fa-facebook fa-icon face-color" aria-hidden="true"></i></a></li> 
+  <li class="list-item-inline"><a href="https://plus.google.com" title="Login with google+" data-toggle="tooltip" target="_blank"><i class="fa fa-google-plus fa-icon google-color" aria-hidden="true"></i></a></li> 
+</ul>
+                <p class="text-center">Don't have an account? <a href="#" class="sign">Sign Up</a></p> -->
+
+{% endblock fos_user_content %} 

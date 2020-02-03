@@ -1,0 +1,16 @@
+{% block subject %}Resetting your password for Radios Book account{% endblock %}
+
+{% block body_text %}
+{% autoescape false %}
+Hello {{ user.username }} !
+
+You can reset your password by accessing {{ confirmationUrl }}
+
+Greetings,
+Radios Book Team
+{% endautoescape %}
+{% endblock %}
+
+{% block body_html %}
+{% include 'emails/resetting.html.twig' %}
+{% endblock %}

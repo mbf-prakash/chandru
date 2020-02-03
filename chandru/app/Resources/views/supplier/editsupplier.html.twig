@@ -1,0 +1,83 @@
+{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2>Edit Supplier</h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+<div class="form-group">
+<label>Supplier Name<span class="required">*</span></label>
+{{ form_widget(form.supplier, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.supplier) }}</span>
+</div>
+
+<div class="form-group">
+<label>Address1<span class="required">*</span></label>
+{{ form_widget(form.address1, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.address1) }}</span>
+</div>
+
+<div class="form-group">
+<label>Address2</label>
+{{ form_widget(form.address2, {'attr': {'class': 'form-control',} }) }}   
+</div>
+
+<div class="form-group">
+<label>City<span class="required">*</span></label>
+{{ form_widget(form.city, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.city) }}</span>
+</div>
+
+<div class="form-group">
+<label>Pincode<span class="required">*</span></label>
+{{ form_widget(form.pincode, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.pincode) }}</span>
+</div>
+
+<div class="form-group">
+<label>Mobile<span class="required">*</span></label>
+{{ form_widget(form.mobile, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.mobile) }}</span>
+</div>
+
+<div class="form-group">
+<label>GSTIN</label>
+{{ form_widget(form.gstin, {'attr': {'class': 'form-control',} }) }}
+</div>
+
+
+<div class="form-group">
+<label>State<span class="required">*</span></label>
+{{ form_widget(form.state, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.state) }}</span>
+</div>
+
+
+<div class="form-group">
+<label>Member Since<span class="required">*</span></label>
+{{ form_widget(form.joineddate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.joineddate) }}</span>
+</div>
+
+
+
+<div class="form-group">
+<label></label>
+<button type="submit" name="submit"  class="btn btn-danger addnew1 pull-left"><i class="fa fa-floppy-o"></i> &nbsp; Save </button> 
+</div>
+
+
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+
+ {% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'adminbase.html.twig' %}
+    
+{% block content %} 
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  <h2>Create Expenses</h2>
+ 
+ {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate' }}) }} 
+ 
+
+<div class="form-group">
+  <label>Date<span class="error">*</span></label>
+{{ form_widget(form.invoicedate, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.invoicedate) }}</span>
+</div>
+
+
+
+
+<div class="form-group">
+  <label>Name<span class="error">*</span></label>
+{{ form_widget(form.name, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.name) }}</span>
+</div>
+
+
+
+
+<div class="form-group">
+  <label>Amount<span class="error">*</span></label>
+{{ form_widget(form.amount, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.amount) }}</span>
+</div>
+
+
+
+<div class="form-group">
+  <label>Description<span class="error">*</span></label>
+{{ form_widget(form.description, {'attr': {'class': 'form-control',} }) }}
+    <span class="error required">{{ form_errors(form.description) }}</span>
+</div>
+
+  <br>
+  <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Create Expenses</button>
+  <a href="{{ path('expanses') }}" class="btn btn-secondary"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a>
+    {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+
+ {% endblock %}

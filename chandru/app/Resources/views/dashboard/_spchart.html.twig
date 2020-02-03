@@ -1,0 +1,25 @@
+<div id="sales_purchase" class="padding-20 border bg-white" style="height:300px"></div>
+
+
+
+ <script type="text/javascript">
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var datas = {{ datas|json_encode|raw }};
+
+    var data = google.visualization.arrayToDataTable(JSON.parse(datas));
+
+    var options = {
+      chart: {
+        title: 'Company Performance',
+        subtitle: 'Sales, Expenses, and Profit: {{ year }}',
+      }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('sales_purchase'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+  }
+</script>

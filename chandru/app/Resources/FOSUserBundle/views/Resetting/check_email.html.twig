@@ -1,0 +1,10 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<img src="{{ asset('images/logo.png') }}" alt="admin" class="img-fluid img-center">
+<p class="error tex text-center fontsize-20 paddtop-20">Reset email has been sent</p>
+<p>{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}</p>  
+<p class="text-center"><a href="{{ path('home') }}" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i> Cancel</a></p>
+{% endblock %}

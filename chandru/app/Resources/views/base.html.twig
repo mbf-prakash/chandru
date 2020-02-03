@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale-1">
+    <meta name="description" content="Admin">
+    <meta name="kewords" content="keywords1, keywords2 | Admin">
+    <!-- css starts here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <!-- css ends here -->
+    <!-- font link starts here -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
+    <!-- font link ends here -->
+    </head>
+<body>
+    <section class="login-register">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 bg-white paddingtop-40 login-form">
+                {% block content %}
+                
+                {% endblock %}
+            </div>
+
+            <div class="col-sm-4">
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+
+<!-- script starts here -->
+<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  
+
+<!-- sticky starts here-->
+<script src="js/jquery.sticky.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#myNavbar").sticky({topSpacing:0});
+  });
+</script>
+<!-- sticky ends here --> 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+<!-- script ends here -->
+    </body>
+    </html>

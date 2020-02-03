@@ -1,0 +1,397 @@
+<?php
+
+/* :product:addproduct.html.twig */
+class __TwigTemplate_4713525defce9b869adb0de0f4f7b646fdf066110833b96136c786b7b965c689 extends Twig_Template
+{
+    private $source;
+
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        // line 1
+        $this->parent = $this->loadTemplate("adminbase.html.twig", ":product:addproduct.html.twig", 1);
+        $this->blocks = array(
+            'content' => array($this, 'block_content'),
+            'javascripts' => array($this, 'block_javascripts'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "adminbase.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":product:addproduct.html.twig"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":product:addproduct.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 2
+    public function block_content($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+
+        // line 3
+        echo "
+
+<div class=\"paddtopbottom-20\">
+<div class=\"container-fluid\">
+<div class=\"row paddleft-18\">
+<p><a href=\"";
+        // line 8
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
+        echo "\">Dashboard</a> / <a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product");
+        echo "\">Product</a> / Add Product</p>
+</div>
+  <div class=\"bg-white table-bg\">
+  <h2>Create Product</h2>
+
+ ";
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 13, $this->source); })()), 'form_start', array("method" => "post", "attr" => array("class" => "form-horizontal", "novalidate" => "novalidate")));
+        echo "  
+
+
+
+<div class=\"form-group\">
+<label>Category<span class=\"required\">*</span></label>
+";
+        // line 19
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 19, $this->source); })()), "category", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 20
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 20, $this->source); })()), "category", array()), 'errors');
+        echo "</span>
+</div>
+
+
+<div class=\"form-group\">
+<label>Product Name<span class=\"required\">*</span></label>
+";
+        // line 26
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 26, $this->source); })()), "product", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 27
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 27, $this->source); })()), "product", array()), 'errors');
+        echo "</span>
+</div>
+
+<div class=\"form-group\">
+<label>Unit<span class=\"required\">*</span></label>
+";
+        // line 32
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 32, $this->source); })()), "unit", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 33
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 33, $this->source); })()), "unit", array()), 'errors');
+        echo "</span>
+</div>
+
+<div class=\"form-group\">
+<label>HSSN Code<span class=\"required\">*</span></label>
+";
+        // line 38
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 38, $this->source); })()), "hssncode", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 39, $this->source); })()), "hssncode", array()), 'errors');
+        echo "</span>
+</div>
+<div class=\"form-group\">
+<label>GST Percentage<span class=\"required\">*</span></label>
+";
+        // line 43
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 43, $this->source); })()), "gst", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 44
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 44, $this->source); })()), "gst", array()), 'errors');
+        echo "</span>
+</div>
+<div class=\"form-group\">
+<label>MRP<span class=\"required\">*</span></label>
+";
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 48, $this->source); })()), "mrp", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 49
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 49, $this->source); })()), "mrp", array()), 'errors');
+        echo "</span>
+</div>
+
+<div class=\"form-group\">
+<label>Discount Percentage<span class=\"required\">*</span></label>
+";
+        // line 54
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 54, $this->source); })()), "discount", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 55
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 55, $this->source); })()), "discount", array()), 'errors');
+        echo "</span>
+</div>
+
+<div class=\"form-group\">
+<label>Selling Rate<span class=\"required\">*</span></label>
+";
+        // line 60
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 60, $this->source); })()), "rate", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 61
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 61, $this->source); })()), "rate", array()), 'errors');
+        echo "</span>
+</div>
+
+
+
+
+
+<div class=\"form-group\">
+<label>Stock<span class=\"required\">*</span></label>
+";
+        // line 70
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 70, $this->source); })()), "stock", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+    <span class=\"error required\">";
+        // line 71
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 71, $this->source); })()), "stock", array()), 'errors');
+        echo "</span>
+</div>
+
+<div class=\"form-group\">
+<label></label>
+<button type=\"submit\" name=\"submit\"  class=\"btn btn-danger addnew1 pull-left\"><i class=\"fa fa-floppy-o\"></i> &nbsp; Save </button> 
+</div>
+
+
+";
+        // line 80
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new Twig_Error_Runtime('Variable "form" does not exist.', 80, $this->source); })()), 'form_end');
+        echo "
+
+    </div>
+  </div>
+</div>
+
+
+ ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 88
+    public function block_javascripts($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 89
+        echo "
+ ";
+        // line 90
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+ <script>
+\$(document).ready(function(){
+    \$(\"#product_mrp\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+      \$(\"#product_discount\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+       \$(\"#product_gst\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+});
+</script>
+
+  ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return ":product:addproduct.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  225 => 90,  222 => 89,  213 => 88,  195 => 80,  183 => 71,  179 => 70,  167 => 61,  163 => 60,  155 => 55,  151 => 54,  143 => 49,  139 => 48,  132 => 44,  128 => 43,  121 => 39,  117 => 38,  109 => 33,  105 => 32,  97 => 27,  93 => 26,  84 => 20,  80 => 19,  71 => 13,  61 => 8,  54 => 3,  45 => 2,  15 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends 'adminbase.html.twig' %}
+{% block content %}
+
+
+<div class=\"paddtopbottom-20\">
+<div class=\"container-fluid\">
+<div class=\"row paddleft-18\">
+<p><a href=\"{{ path('dashboard') }}\">Dashboard</a> / <a href=\"{{ path('product') }}\">Product</a> / Add Product</p>
+</div>
+  <div class=\"bg-white table-bg\">
+  <h2>Create Product</h2>
+
+ {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate' }}) }}  
+
+
+
+<div class=\"form-group\">
+<label>Category<span class=\"required\">*</span></label>
+{{ form_widget(form.category, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.category) }}</span>
+</div>
+
+
+<div class=\"form-group\">
+<label>Product Name<span class=\"required\">*</span></label>
+{{ form_widget(form.product, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.product) }}</span>
+</div>
+
+<div class=\"form-group\">
+<label>Unit<span class=\"required\">*</span></label>
+{{ form_widget(form.unit, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.unit) }}</span>
+</div>
+
+<div class=\"form-group\">
+<label>HSSN Code<span class=\"required\">*</span></label>
+{{ form_widget(form.hssncode, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.hssncode) }}</span>
+</div>
+<div class=\"form-group\">
+<label>GST Percentage<span class=\"required\">*</span></label>
+{{ form_widget(form.gst, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.gst) }}</span>
+</div>
+<div class=\"form-group\">
+<label>MRP<span class=\"required\">*</span></label>
+{{ form_widget(form.mrp, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.mrp) }}</span>
+</div>
+
+<div class=\"form-group\">
+<label>Discount Percentage<span class=\"required\">*</span></label>
+{{ form_widget(form.discount, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.discount) }}</span>
+</div>
+
+<div class=\"form-group\">
+<label>Selling Rate<span class=\"required\">*</span></label>
+{{ form_widget(form.rate, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.rate) }}</span>
+</div>
+
+
+
+
+
+<div class=\"form-group\">
+<label>Stock<span class=\"required\">*</span></label>
+{{ form_widget(form.stock, {'attr': {'class': 'form-control',} }) }}
+    <span class=\"error required\">{{ form_errors(form.stock) }}</span>
+</div>
+
+<div class=\"form-group\">
+<label></label>
+<button type=\"submit\" name=\"submit\"  class=\"btn btn-danger addnew1 pull-left\"><i class=\"fa fa-floppy-o\"></i> &nbsp; Save </button> 
+</div>
+
+
+{{ form_end(form) }}
+
+    </div>
+  </div>
+</div>
+
+
+ {% endblock %}
+ {% block javascripts %}
+
+ {{ parent() }}
+ <script>
+\$(document).ready(function(){
+    \$(\"#product_mrp\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+      \$(\"#product_discount\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+       \$(\"#product_gst\").change(function(){
+        var num=\$(\"#product_mrp\").val()-(\$(\"#product_mrp\").val()*(\$(\"#product_discount\").val()/100));
+        var gst=1+(\$(\"#product_gst\").val()/100);
+        num=num/gst;
+        \$(\"#product_rate\").val(num.toFixed(2));
+       
+    });
+});
+</script>
+
+  {% endblock %}", ":product:addproduct.html.twig", "/opt/bitnami/apache2/htdocs/chandru/app/Resources/views/product/addproduct.html.twig");
+    }
+}

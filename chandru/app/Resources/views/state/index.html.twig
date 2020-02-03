@@ -1,0 +1,29 @@
+{% extends 'adminbase.html.twig' %}
+
+    
+{% block content %}
+
+<!-- table starts here -->
+
+<div class="padding-20">
+<div class="container-fluid">
+<div class="row paddleft-18">
+</div>
+  <div class="bg-white table-bg">
+  {{ include('site/_flash_messages.html.twig')}}
+  <div class="row">
+  <div class="col-sm-6">
+    <h2>State</h2>
+    </div>
+     <div class="col-sm-6 text-right">
+    <a href="{{ path('addstate') }}" class="btn btn-success add-btn"><i class="fa fa-plus add-icon" aria-hidden="true"></i> Add New</a>
+    </div>
+    </div>
+    {{ grid(grid) }}
+{% block grid_filters %}{% endblock %}
+  </div>
+  </div>
+</div>
+<!-- table ends here -->
+
+ {% endblock %}
